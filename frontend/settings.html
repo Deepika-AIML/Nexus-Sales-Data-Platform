@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — Nexus</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-nav="settings">
+<div class="app-shell">
+  <aside class="sidebar"><div id="sidebar-mount"></div></aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Settings</div>
+        <div class="topbar-sub">System status and active session</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-title mb-4">Backend Status</div>
+          <div id="backend-status">${""}</div>
+        </div>
+        <div class="card">
+          <div class="card-title mb-4">Upload Limits</div>
+          <div class="text-sm">Accepted format: <strong>CSV only</strong></div>
+          <div class="text-sm">Maximum file size: <strong>25 MB</strong></div>
+          <div class="text-sm mt-4"><a href="http://localhost:8000/docs" target="_blank" rel="noopener">Open FastAPI Swagger Docs →</a></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title mb-4">Active Session</div>
+        <div id="session-info" class="text-sm mb-4"></div>
+        <button class="btn btn-secondary btn-sm" id="clear-session-btn">Clear Active Dataset</button>
+      </div>
+
+      <div class="card">
+        <div class="card-title mb-4">About Nexus</div>
+        <p class="text-sm">Nexus V1 is a single-instance local data platform — no authentication or multi-tenant
+           user management, by design (see the Technical Learning Guide for rationale). Every processed dataset
+           is retained under its own <code>dataset_id</code> so multiple uploads can coexist safely.</p>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>

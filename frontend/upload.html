@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Dataset — Nexus</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-nav="upload">
+<div class="app-shell">
+  <aside class="sidebar"><div id="sidebar-mount"></div></aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Upload Dataset</div>
+        <div class="topbar-sub">Step 1 of the Nexus pipeline</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="stage-tracker" id="stage-tracker"></div>
+
+      <div id="required-banner" class="alert alert-warning mb-6 hidden">
+        Upload a dataset to continue — nothing is active yet.
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Upload your sales dataset</div>
+            <div class="card-desc">CSV only &middot; Maximum 25 MB</div>
+          </div>
+        </div>
+
+        <div id="dropzone" class="dropzone">
+          <div class="dropzone-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="color:var(--slate-400)">
+              <path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/>
+            </svg>
+          </div>
+          <div style="font-weight:600; margin-bottom:4px;">Drag &amp; drop your CSV here</div>
+          <div class="text-sm text-muted mb-4">or click to browse files</div>
+          <input type="file" id="file-input" accept=".csv" class="hidden">
+        </div>
+
+        <div id="file-info" class="mt-4 hidden">
+          <div class="flex-between" style="padding: var(--sp-4); background: var(--canvas); border-radius: var(--radius-md);">
+            <div>
+              <div id="file-name" style="font-weight:600;"></div>
+              <div id="file-size" class="text-sm text-muted"></div>
+            </div>
+            <button class="btn btn-primary" id="upload-btn">Upload</button>
+          </div>
+        </div>
+
+        <div id="upload-status" class="mt-4"></div>
+      </div>
+
+      <div id="profile-card" class="card hidden">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Dataset profile</div>
+            <div class="card-desc">What Nexus detected in your file</div>
+          </div>
+          <a class="btn btn-primary btn-sm" href="mapping.html">Continue to Mapping →</a>
+        </div>
+        <div id="profile-body"></div>
+      </div>
+
+    </main>
+  </div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/upload.js"></script>
+</body>
+</html>

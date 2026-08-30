@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History — Nexus</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-nav="history">
+<div class="app-shell">
+  <aside class="sidebar"><div id="sidebar-mount"></div></aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Processing History</div>
+        <div class="topbar-sub">Every dataset uploaded to this Nexus instance</div>
+      </div>
+      <a class="btn btn-primary btn-sm" href="upload.html">Upload New Dataset</a>
+    </header>
+
+    <main class="content">
+      <div id="history-body"></div>
+    </main>
+  </div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/history.js"></script>
+</body>
+</html>

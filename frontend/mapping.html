@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Mapping — Nexus</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-nav="mapping">
+<div class="app-shell">
+  <aside class="sidebar"><div id="sidebar-mount"></div></aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Data Mapping</div>
+        <div class="topbar-sub" id="dataset-sub">Review how your columns map to the Nexus schema</div>
+      </div>
+      <button class="btn btn-secondary btn-sm" id="regenerate-btn">Regenerate Suggestions</button>
+    </header>
+
+    <main class="content">
+      <div class="stage-tracker" id="stage-tracker"></div>
+
+      <div id="conflicts-banner"></div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Column mapping</div>
+            <div class="card-desc">
+              &ge;85% confidence auto-maps &middot; 60&ndash;84% needs review &middot; &lt;60% is left unmapped.
+              Change any field below before confirming.
+            </div>
+          </div>
+        </div>
+        <div id="mapping-body">${""}</div>
+      </div>
+
+      <div class="card">
+        <div class="flex-between">
+          <div class="text-sm text-muted" id="mapping-summary"></div>
+          <button class="btn btn-primary" id="confirm-btn">Confirm Mapping &amp; Continue</button>
+        </div>
+        <div id="confirm-status" class="mt-4"></div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/mapping.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Quality — Nexus</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-nav="quality">
+<div class="app-shell">
+  <aside class="sidebar"><div id="sidebar-mount"></div></aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <div class="topbar-title">Data Quality</div>
+        <div class="topbar-sub">Computed from your confirmed column mapping</div>
+      </div>
+      <a class="btn btn-secondary btn-sm" href="mapping.html">← Back to Mapping</a>
+    </header>
+
+    <main class="content">
+      <div class="stage-tracker" id="stage-tracker"></div>
+      <div id="quality-body">${""}</div>
+    </main>
+  </div>
+</div>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/quality.js"></script>
+</body>
+</html>

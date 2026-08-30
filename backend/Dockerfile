@@ -50,4 +50,4 @@ HEALTHCHECK --interval=15s --timeout=5s --start-period=30s --retries=5 \
 # JAVA_HOME is configured by docker-entrypoint.sh at container startup.
 ENTRYPOINT ["./docker-entrypoint.sh"]
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
